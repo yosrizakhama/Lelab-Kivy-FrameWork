@@ -1,0 +1,77 @@
+#:import layout_exemples layout_exemples
+#:import widget_exemples widget_exemples
+#:import navigation_screen_manager navigation_screen_manager
+#:import boxlayout_with_action_bar boxlayout_with_action_bar
+<MenuPrincipal@BoxLayout>:
+    orientation:"vertical"
+    Button:
+        text:"IMAGES"
+        on_press:app.manager.push("ImageExemples")
+    Button:
+        text:"LAYOUTS"
+        on_press:app.manager.push("LayoutExemplesTabs")
+    Button:
+        text:"WIDGETS"
+        on_press:app.manager.push("WidgetExemple")
+    Button:
+        text:"CANVAS"
+        on_press:app.manager.push("CanvasExemple")
+<MyScreenManager>:
+    Screen:
+        name:"MenuPrincipal"
+        MenuPrincipal:
+
+    Screen:
+        name:"Screen1"
+        BoxLayout:
+            Button:
+                text:"Screen 1 to Screen 2-images"
+                on_press:root.transition.direction = "left";app.manager.push("ImageExemples")#root.push("screen1")
+            Button:
+                text:"Previous <--"
+                on_press:root.transition.direction = "right";app.manager.pop()#root.pop()
+
+    Screen:
+        name:"ImageExemples"
+        BoxLayoutWithActionBar:
+            title:"previous"
+            ImageExemples:
+    Screen:
+        name:"LayoutExemplesTabs"
+        BoxLayoutWithActionBar:
+            title:"previous"
+            LayoutExemplesTabs:
+    Screen:
+        name:"WidgetExemple"
+        BoxLayoutWithActionBar:
+            title:"previous"
+            WidgetExemple:
+
+    Screen:
+        name:"CanvasExemple"
+        BoxLayoutWithActionBar:
+            title:"previous"
+            CanvasExemplesTabs:
+
+    Screen:
+        name:"Screen2"
+        BoxLayout:
+            Button:
+                text:"Screen 2  to Screen 3"
+                on_press:root.transition.direction = "left";app.manager.push("Screen3")#root.push("Screen3")
+            Button:
+                text:"Previous <--"
+                on_press:root.transition.direction = "right";app.manager.pop()#root.pop()
+    Screen:
+        name:"Screen3"
+        BoxLayout:
+            Button:
+                text:"Screen3 to Screen1"
+                on_press:root.transition.direction="left";app.manager.push("Screen1")#root.push("Screen1")
+            Button:
+                text:"Previous <--"
+                on_press:root.transition.direction="right";app.manager.pop()
+
+
+
+

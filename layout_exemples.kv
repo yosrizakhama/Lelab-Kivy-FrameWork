@@ -1,0 +1,166 @@
+<LayoutExemplesTabs@TabbedPanel>:
+    do_default_tab:False
+    TabbedPanelItem:
+        text: "WIDGETS"
+        MainWidget:
+    TabbedPanelItem:
+        text: "PAGES"
+        PageLayoutExemple:
+    TabbedPanelItem:
+        text: "SCROLL"
+        ScrollViewExemple:
+    TabbedPanelItem:
+        text: "GRID"
+        GridLayoutExemple:
+    TabbedPanelItem:
+        text: "ANCHOR"
+        AnchorLayoutExemple:
+    TabbedPanelItem:
+        text: "BOX"
+        BoxLayoutExemple:
+
+
+<CanvasExemplesTabs@TabbedPanel>:
+    do_default_tab:False
+    TabbedPanelItem:
+        text: "1"
+        CanvasExemples1:
+    TabbedPanelItem:
+        text: "2"
+        CanvasExemples2:
+    TabbedPanelItem:
+        text: "3"
+        CanvasExemples3:
+    TabbedPanelItem:
+        text: "4"
+        CanvasExemples4:
+    TabbedPanelItem:
+        text: "5"
+        CanvasExemples5:
+    TabbedPanelItem:
+        text: "6"
+        CanvasExemples6:
+    TabbedPanelItem:
+        text: "7"
+        CanvasExemples7:
+
+<PageLayoutExemple@PageLayout>:
+    ScrollViewExemple:
+        canvas.before:
+            Color:
+                rgb:0,0,0
+            Rectangle:
+                size:self.size
+                pos:self.pos
+    GridLayoutExemple:
+        canvas.before:
+            Color:
+                rgb:0,0,0
+            Rectangle:
+                size:self.size
+                pos:self.pos
+    AnchorLayoutExemple:
+        canvas.before:
+            Color:
+                rgb:0,0,0
+            Rectangle:
+                size:self.size
+                pos:self.pos
+    BoxLayoutExemple:
+        canvas.before:
+            Color:
+                rgb:0,0,0
+            Rectangle:
+                size:self.size
+                pos:self.pos
+
+
+<ScrollViewExemple@ScrollView>:
+    StackLayoutExemple:
+        size_hint:1,None
+        height: self.minimum_height
+<StackLayoutExemple>:
+    padding: "20dp","20dp","20dp","20dp"
+    spacing: "20dp","20dp"
+    Button:
+        text:"1"
+        size_hint:0.2,0.2
+<GridLayoutExemple@GridLayout>:
+    spacing:"15dp"
+    cols:3
+    Button:
+        text:"1.1"
+        size_hint:.5,1
+    Button:
+        text:"1.2"
+        size_hint:None,1
+        width:"50px"
+    AnchorLayoutExemple:
+
+    Button:
+        text:"2.1"
+        size_hint:.5,1
+    BoxLayoutExemple:
+
+    Button:
+        text:"2.3"
+
+
+
+<AnchorLayoutExemple>:
+
+    anchor_x: "center"
+    anchor_y: "bottom"
+    BoxLayout:
+        spacing:"10px"
+        size_hint: 0.3,0.3
+        Button:
+            text:"1"
+        Button:
+            text:"2"
+
+
+
+<BoxLayoutExemple>:
+
+    orientation:"vertical"
+    spacing:"10dp"
+    Button:
+        text:"A"
+        size_hint: 0.5,2
+        pos_hint:{"x":0.2}
+
+        # x , center_x, right
+        # y , center_y, top
+    Button:
+        text:"B"
+        size_hint: None,None
+        width: "200dp"
+        height: "50dp"
+        pos_hint:{"y":0.2}
+    BoxLayout:
+        spacing:"5dp"
+        orientation:"horizontal"
+        Button:
+            text:"1"
+        Button:
+            text:"2"
+        Button:
+            text:"3"
+        Button:
+            text:"4"
+
+    Label:
+        text:"Label"
+
+<MainWidget>:
+    Button:
+        text:"Hello World !"
+        color:"red"
+        size: "100dp","60dp"
+        pos: "200dp", "100dp"
+    Label:
+        text:"Hello World2 !"
+        color:0.5, 0.2, 0, 1
+        size: "100dp","60dp"
+        pos: "400dp", "100dp"
